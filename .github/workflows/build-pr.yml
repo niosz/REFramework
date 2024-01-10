@@ -1,4 +1,5 @@
-name: Build PR FULL
+name: Build PR
+on: [pull_request, workflow_dispatch]
 env:
   BUILD_TYPE: Release
 jobs:

@@ -1,4 +1,5 @@
 name: Build PR DX11
+on: [pull_request, workflow_dispatch]
 env:
   BUILD_TYPE: Release
 jobs:

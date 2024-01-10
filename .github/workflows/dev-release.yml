@@ -1,4 +1,5 @@
 name: Dev Release
+on: [push, workflow_dispatch]
 env:
   BUILD_TYPE: Release
 jobs:
