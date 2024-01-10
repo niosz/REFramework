@@ -76,9 +76,9 @@ void REFramework::hook_monitor() {
 
             if (!m_has_last_chance && now - m_last_chance_time > std::chrono::seconds(1)) {
                 spdlog::info("Sending rehook request for D3D");
-
-                // hook_d3d12 always gets called first.
-                if (m_is_d3d11) {
+                spdlog::info("NiosZ Mod : Reverse Sequence DX11-->DX12");
+                // hook_d3d11 always gets called first.
+                if (m_is_d3d12) {
                     hook_d3d11();
                 } else {
                     hook_d3d12();
@@ -154,7 +154,7 @@ REFramework::REFramework(HMODULE reframework_module)
         spdlog::warn("Failed to write to current directory, falling back to appdata folder");
     }
 
-    spdlog::info("REFramework entry");
+    spdlog::info("REFramework entry : With NiosZ Reverse DX11-12 FIX");
 
     const auto module_size = *utility::get_module_size(m_game_module);
 
